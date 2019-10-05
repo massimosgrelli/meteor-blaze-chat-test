@@ -1,0 +1,19 @@
+<template name="Messages">
+{{#if Template.subscriptionsReady }}
+    <div class="messages-box">
+        <div id="messages-scroll" class="messages-scroll">
+            <div id="messages" class="messages">
+                Retrived {{count}} messages in {{loadTime}}ms
+                {{#each messages}}
+                    {{> Message}}
+                {{/each}}
+            </div>
+        </div>   
+    </div>
+    <div class="new-message-container">
+        <p>{{> NewMessage}}</p>            
+    </div>            
+{{else }}
+    <div class="text-center mt-5 loading">Be patient I'm loading...</div>
+{{/if}}
+</template>
